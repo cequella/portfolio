@@ -1,0 +1,122 @@
+<!-- About-->
+<section class="resume-section" id="about">
+    <div class="resume-section-content">
+        <h1 class="mb-0">
+            {{data.firstName}}
+            <span class="text-primary">{{data.secondName}}</span>
+        </h1>
+        <div class="subheading mb-5">
+            3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
+            <a [href]="emailLink">{{data.email}}</a>
+        </div>
+        <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high
+            level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the
+            overall value proposition.</p>
+        <div class="social-icons">
+            <a *ngFor="let item of data.social" class="social-icon" [ngClass]="item.class" [href]="item.link">
+                <fa-icon [icon]="item.icon"></fa-icon>
+            </a>
+        </div>
+    </div>
+</section>
+<hr class="m-0" />
+<!-- Experience-->
+<section class="resume-section" id="experience">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Experience</h2>
+        <div *ngFor="let item of data.experience" class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">{{item.title}}</h3>
+                <div class="subheading mb-3">{{item.enterprise}}</div>
+                <p>{{item.description}}</p>
+            </div>
+            <div class="flex-shrink-0"><span class="text-primary">
+                    {{item.startAt}} - {{item.endAt ||"Present"}}</span>
+            </div>
+        </div>
+    </div>
+</section>
+<hr class="m-0" />
+<!-- Education-->
+<section class="resume-section" id="education">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Education</h2>
+        <div *ngFor="let item of data.education" class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">{{item.institution}}</h3>
+                <div class="subheading mb-3">{{item.grade}}</div>
+                <div>{{item.description}}</div>
+            </div>
+            <div class="flex-shrink-0">
+                <span class="text-primary">{{item.startAt}} - {{item.endAt || "Present"}}</span>
+            </div>
+        </div>
+    </div>
+</section>
+<hr class="m-0" />
+<!-- Skills-->
+<section class="resume-section" id="skills">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Skills</h2>
+        <div class="subheading mb-3">Programming Languages & Tools</div>
+        <ul class="list-inline dev-icons">
+            <li *ngFor="let item of data.tools" class="list-inline-item">
+                <fa-icon [icon]="item"></fa-icon>
+            </li>
+            <br />
+            <li *ngFor="let item of data.otherTools" class="list-inline-item">
+                <img [src]="item" />
+            </li>
+        </ul>
+        <div class="subheading mb-3">Workflow</div>
+        <ul class="fa-ul mb-0">
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                Mobile-First, Responsive Design
+            </li>
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                Cross Browser Testing & Debugging
+            </li>
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                Cross Functional Teams
+            </li>
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                Agile Development & Scrum
+            </li>
+        </ul>
+    </div>
+</section>
+<hr class="m-0" />
+<!-- Interests-->
+<section class="resume-section" id="interests">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Interests</h2>
+        <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid
+            skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free
+            climbing, and kayaking.</p>
+        <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television
+            shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology
+            advancements in the front-end web development world.</p>
+    </div>
+</section>
+<hr class="m-0" />
+<!-- Awards-->
+<section class="resume-section" id="contents">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Contents</h2>
+        <ul class="fa-ul mb-0">
+            <li class="row">
+                <img class="col-4" src="assets/img/Vulkan.svg" alt="Vulkan tutorial">
+                <p class="col-8">
+                    When forced indoors, I follow a number of sci-fi and fantasy genre movies and television
+                    shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest
+                    technology advancements in the front-end web development world.
+                </p>
+                <button class="btn btn-info" [routerLink]="['/vulkan']">See more...</button>
+            </li>
+        </ul>
+    </div>
+</section>

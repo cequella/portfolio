@@ -1,0 +1,18 @@
+li.list-inline-item > img {
+    width: 0.875em;
+}
+
+.social-icon:hover {
+    &.linkedin {
+        background-color: #0077b5 !important;
+    }
+    &.github {
+        background-color: #333 !important;
+    }
+    &.twitch {
+        background-color: #9146ff !important;
+    }
+    &.instagram {
+        background-color: #c13584 !important;
+    }
+}

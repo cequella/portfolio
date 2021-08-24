@@ -1,4 +1,7 @@
+import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
+
+import { NavMenuItem } from "./model/NavMenuItem";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'portfolio';
+  constructor(
+    private viewportScrolled: ViewportScroller
+  ) {}
+
+  navigationClick(event: NavMenuItem): void {
+    this.viewportScrolled.scrollToAnchor(event.link);
+  }
 }
