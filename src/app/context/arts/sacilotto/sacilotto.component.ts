@@ -20,6 +20,8 @@ class Section2D {
 }
 
 interface Sacilotto {
+  sectorAngle: number;
+  startAngle: number;
   amount: number;
   gut: number;
   margin: number;
@@ -49,6 +51,8 @@ export class SacilottoComponent implements OnInit, AfterViewInit {
       margin: [10],
       background: ["#ffffff"],
       foreground: ["#ff0000"],
+      startAngle: [0],
+      sectorAngle: [1.75],
     });
   }
   
@@ -85,6 +89,7 @@ export class SacilottoComponent implements OnInit, AfterViewInit {
     const sizeWithoutGuts = size - (settings.amount+1)*settings.gut - 2*settings.margin;
     const sectionSize = sizeWithoutGuts/(2*settings.amount);
     const sectionWithGuts = sectionSize*2+settings.gut;
+    const rotation = Math.PI/(settings.amount*2);
 
     this.sections = [];
     for(let i=0; i<settings.amount; i++) {
@@ -93,7 +98,8 @@ export class SacilottoComponent implements OnInit, AfterViewInit {
           settings.margin + settings.gut + sectionSize + i*sectionWithGuts, 
           settings.margin + settings.gut + sectionSize + j*sectionWithGuts, 
           sectionSize, 
-          (i+j)*Math.PI/8, Math.PI*1.75+(i+j)*Math.PI/8);
+          settings.startAngle + (i+j)*rotation, 
+          settings.startAngle + (Math.PI*settings.sectorAngle+(i+j)*rotation));
         this.sections.push(section);
       }
     }

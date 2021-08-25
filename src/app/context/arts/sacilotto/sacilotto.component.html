@@ -1,11 +1,40 @@
 <h3>Luiz Sacilotto</h3>
-<canvas #canvas width="450" height="450">
-    Seu browser não suporta HTML5 ou tecnologia de canvas
-</canvas>
-<form [formGroup]="form" (change)="update()">
-    <input type="range" min="3" max="6" step="1" formControlName="amount">
-    <input type="range" min="0" max="10" step="0.1" formControlName="gut">
-    <input type="range" min="0" max="10" step="0.1" formControlName="margin">
-    <input type="color" formControlName="background">
-    <input type="color" formControlName="foreground">
-</form>
+<div class="container">
+    <div class="row justify-content-center">
+        <canvas #canvas class="col-6" width="450" height="450">
+            Seu browser não suporta HTML5 ou tecnologia de canvas
+        </canvas>
+    </div>
+    <div class="row justify-content-center">
+        <form [formGroup]="form" class="col-6" (change)="update()">
+            <div class="form-group">
+                <label for="startAngle" class="form-label">Ângulo inicial</label>
+                <input id="startAngle" class="form-range" type="range" min="0.0" max="3.14" step="0.01" formControlName="startAngle">
+            </div>
+            <div class="form-group">
+                <label for="sectorAngle" class="form-label">Ângulo do setor</label>
+                <input id="sectorAngle" class="form-range" type="range" min="0.0" max="2.0" step="0.01" formControlName="sectorAngle">
+            </div>
+            <div class="form-group">
+                <label for="amount" class="form-label">Amount</label>
+                <input id="amount" class="form-range" type="range" min="3" max="10" step="1" formControlName="amount">
+            </div>
+            <div class="form-group">
+                <label for="gut" class="form-label">Gut</label>
+                <input id="gut" class="form-range" type="range" min="0" max="10" step="0.1" formControlName="gut">
+            </div>
+            <div class="form-group">
+                <label for="margin" class="form-label">Margin</label>
+                <input id="margin" class="form-range" type="range" min="0" max="10" step="0.1" formControlName="margin">
+            </div>
+            <div class="form-group">
+                <label for="background" class="form-label">Background</label>
+                <input id="background" type="color" class="form-control form-control-color" title="Choose your color" formControlName="background">
+            </div>
+            <div class="form-group">
+                <label for="foreground" class="form-label">Foreground</label>
+                <input id="foreground" type="color" class="form-control form-control-color" title="Choose your color"  formControlName="foreground">
+            </div>
+        </form>
+    </div>
+</div>
