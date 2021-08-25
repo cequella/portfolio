@@ -1,0 +1,11 @@
+<h3>Luiz Sacilotto</h3>
+<canvas #canvas width="450" height="450">
+    Seu browser não suporta HTML5 ou tecnologia de canvas
+</canvas>
+<form [formGroup]="form" (change)="update()">
+    <input type="range" min="3" max="6" step="1" formControlName="amount">
+    <input type="range" min="0" max="10" step="0.1" formControlName="gut">
+    <input type="range" min="0" max="10" step="0.1" formControlName="margin">
+    <input type="color" formControlName="background">
+    <input type="color" formControlName="foreground">
+</form>

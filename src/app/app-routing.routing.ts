@@ -10,6 +10,10 @@ const routes: Routes = [
     path: "vulkan",
     loadChildren: () => import("./context/vulkan1/vulkan1.module").then(m => m.Vulkan1Module)
   },
+  {
+    path: "arts",
+    loadChildren: () => import("./context/arts/arts.module").then(m => m.ArtsModule)
+  },
 
   {
     path: "",
