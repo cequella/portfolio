@@ -64,6 +64,32 @@ export class VitaeComponent implements OnInit {
       "C", "CPlus", "CSharp", "Flutter",
       "Golang", "Django", "Typescript", "Lua",
       "Opengl", "Vulkan", "Material"
+    ],
+    content: [
+      {
+        img: {
+          src: "assets/img/Vulkan.svg",
+          alt: "Vulkan tutorial"
+        },
+        description: `
+        When forced indoors, I follow a number of sci-fi and fantasy genre movies and television
+        shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest
+        technology advancements in the front-end web development world.
+        `,
+        link: "/vulkan"
+      },
+      {
+        img: {
+          src: "assets/img/Vulkan.svg",
+          alt: "Vulkan tutorial"
+        },
+        description: `
+        When forced indoors, I follow a number of sci-fi and fantasy genre movies and television
+        shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest
+        technology advancements in the front-end web development world.
+        `,
+        link: "/arts/sacilotto"
+      },
     ]
   }
 

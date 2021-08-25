@@ -108,14 +108,12 @@
     <div class="resume-section-content">
         <h2 class="mb-5">Contents</h2>
         <ul class="fa-ul mb-0">
-            <li class="row">
-                <img class="col-4" src="assets/img/Vulkan.svg" alt="Vulkan tutorial">
-                <p class="col-8">
-                    When forced indoors, I follow a number of sci-fi and fantasy genre movies and television
-                    shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest
-                    technology advancements in the front-end web development world.
-                </p>
-                <button class="btn btn-info" [routerLink]="['/vulkan']">See more...</button>
+            <li class="row" *ngFor="let item of data.content">
+                <img class="col-4" [src]="item.img.src" [alt]="item.img.alt">
+                <div class="col-8">
+                    <p>{{item.description}}</p>
+                    <button class="btn btn-info" [routerLink]="[item.link]">See more...</button>
+                </div>
             </li>
         </ul>
     </div>
